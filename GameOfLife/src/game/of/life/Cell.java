@@ -29,15 +29,24 @@ public class Cell {
 	}
 
 	public boolean click(int x, int y, CellCanvas cc) {
-		if (x > this.col*10 && x < (this.col*10)+this.size && y > this.row*10 && y < (this.row*10)+this.size && !this.entered) {
+		if (this.inside(x,y) && !this.entered) {
 			this.alive = !this.alive;
 			this.entered = true;
 			cc.repaint();
 			return true;
 		}
-		else if (x+10 < this.col*10 && x+10 > (this.col*10)+this.size && y+10 < this.row*10 && y+10 > (this.row*10)+this.size) {
+		/*else if (x+10 < this.col*10 && x+10 > (this.col*10)+this.size && y+10 < this.row*10 && y+10 > (this.row*10)+this.size) {
 			this.entered = false;
 			cc.repaint();
+			return true;
+		}*/
+		else {
+			return false;
+		}
+	}
+	
+	public boolean inside(int x, int y) {
+		if (x > this.col*10 && x < (this.col*10)+this.size && y > this.row*10 && y < (this.row*10)+this.size) {
 			return true;
 		}
 		else {
