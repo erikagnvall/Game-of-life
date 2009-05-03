@@ -3,7 +3,7 @@ package game.of.life;
 import java.awt.*;
 
 public class Cell {
-	private int col, row, size = 12;
+	private int col, row, size = 10;
 	private int neighbour;
 	private boolean alive = false, entered = false;
 
@@ -23,7 +23,7 @@ public class Cell {
 			g.drawRect(col*10, row*10, size, size);
 		}
 	}
-	
+
 	public void setAlive(boolean a) {
 		this.alive = a;
 	}
@@ -35,16 +35,16 @@ public class Cell {
 			cc.repaint();
 			return true;
 		}
-		/*else if (x+10 < this.col*10 && x+10 > (this.col*10)+this.size && y+10 < this.row*10 && y+10 > (this.row*10)+this.size) {
+		else if (x+10 < this.col*10 && x+10 > (this.col*10)+this.size && y+10 < this.row*10 && y+10 > (this.row*10)+this.size) {
 			this.entered = false;
 			cc.repaint();
 			return true;
-		}*/
+		}
 		else {
 			return false;
 		}
 	}
-	
+
 	public boolean inside(int x, int y) {
 		if (x > this.col*10 && x < (this.col*10)+this.size && y > this.row*10 && y < (this.row*10)+this.size) {
 			return true;
