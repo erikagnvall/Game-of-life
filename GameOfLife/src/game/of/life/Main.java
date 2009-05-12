@@ -2,20 +2,30 @@ package game.of.life;
 
 import java.awt.*;
 import java.awt.event.*;
-// GIT :D
+
 public class Main extends Frame {
+	/**
+	 * Ignorera
+	 */
 	private static final long serialVersionUID = -7756878323926974220L;
-	CellCanvas cc;
-	Frame frame = new Frame("Game of Life");
 
-	/** Constructor, does almost everything */
+	/**
+	 * Bredd och höjd på fönstret
+	 */
+	private int width = 447, height = 293;
+
+	/**
+	 * Frame, själva fönstret
+	 */
+	private Frame frame;
+
+	/**
+	 * Konstruktor, initierar fönstret och ser till så att 
+	 * vi kan stänga fönstret
+	 */
 	public Main() {
-		setBackground(Color.blue);
-
-		/** Creates the window */
 		createWindow();
 
-		/** Listen to the close button */
 		frame.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent we) {
 				dispose();
@@ -24,21 +34,42 @@ public class Main extends Frame {
 		});
 	}
 
-	/** Creates the window */
-	public void createWindow() {
-		/** Set visibility and size of the window, 
-		 * make it unresizable and set the color.*/
-		frame.setSize(447,293);
+	/**
+	 * Skapar fönstret och lägger till CellCanvasen till det
+	 */
+	private void createWindow() {
+		frame = new Frame("Game of Life");
+
+		frame.setSize(width, height);
 		frame.setResizable(false);
 
-		cc = new CellCanvas();
-		frame.add(cc);
+		frame.add(new CellCanvas(width, height));
+
+		frame.setLocation(windowLocation());
 
 		frame.setVisible(true);
 	}
 
-	/** Initializes the Main class and
-	 * starts the program */
+
+	/**
+	 * Ser till så att fönstret hamnar i mitten av skärmen
+	 * @return Point med x- och y-värdet i 
+	 */
+	private Point windowLocation() {
+		Point p = new Point();
+		Toolkit tk = Toolkit.getDefaultToolkit();
+		Dimension scrnsize = tk.getScreenSize();
+
+		p.setLocation((int)((scrnsize.width/2)-width/2), (int)((scrnsize.height/2)-height/2));
+
+		return p;
+	}
+
+
+	/**
+	 * Startar en instans av Main
+	 * @param args argument att skicka till programmet, för närvarande stöds inga argument
+	 */
 	public static void main(String[] args) {
 		/** Create an instance of the class */
 		new Main();
