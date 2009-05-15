@@ -3,7 +3,7 @@ package game.of.life;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Main extends Frame {
+public class Main extends Frame implements Runnable {
 	/**
 	 * Ignorera
 	 */
@@ -12,12 +12,22 @@ public class Main extends Frame {
 	/**
 	 * Bredd och höjd på fönstret
 	 */
-	private int width = 447, height = 293;
+	private int width = 447, height = 326;
 
 	/**
 	 * Frame, själva fönstret
 	 */
 	private Frame frame;
+
+	/**
+	 * CellCanvasen som typ allt görs på
+	 */
+	CellCanvas cc;
+
+	/**
+	 * StatusPanelen längst ner i fönstret
+	 */
+	StatusPanel sp;
 
 	/**
 	 * Konstruktor, initierar fönstret och ser till så att 
@@ -32,6 +42,9 @@ public class Main extends Frame {
 				System.exit(0);
 			}
 		});
+		
+		Thread t = new Thread(this);
+		t.start();
 	}
 
 	/**
@@ -42,12 +55,33 @@ public class Main extends Frame {
 
 		frame.setSize(width, height);
 		frame.setResizable(false);
+		frame.setLayout(new BorderLayout());
 
-		frame.add(new CellCanvas(width, height));
+		cc = new CellCanvas(width, height-44);
+		frame.add(cc, BorderLayout.CENTER);
+		cc.setFocusable(true);
+
+		sp = new StatusPanel(width, 10);
+		frame.add(sp, BorderLayout.SOUTH);
 
 		frame.setLocation(windowLocation());
 
 		frame.setVisible(true);
+	}
+
+
+	/**
+	 * @see java.lang.Runnable#run
+	 */
+	public void run() {
+		while (true) {
+			try {
+				sp.generations = cc.getGenerations();
+				sp.repaint();
+
+				Thread.sleep(cc.getSleepTime());
+			} catch(InterruptedException ie) {}
+		}
 	}
 
 

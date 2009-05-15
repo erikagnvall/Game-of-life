@@ -11,7 +11,7 @@ public class Cell {
 	/**
 	 * Raden och kolumnen på cellen
 	 */
-	private int row, col;
+	public final int row, col;
 	/**
 	 * Storleken på cellen som en konstant
 	 */
@@ -19,7 +19,7 @@ public class Cell {
 	/**
 	 * Antal grannar för cellen
 	 */
-	private int neighbour;
+	public int neighbour;
 	/**
 	 * Boolean som indikerar som cellen lever eller inte
 	 */
@@ -52,15 +52,6 @@ public class Cell {
 	 */
 	public boolean getAlive() {
 		return this.alive;
-	}
-
-
-	/**
-	 * Ange nytt antal grannar
-	 * @param n nytt antal grannar
-	 */
-	public void setNeighbours(int n) {
-		this.neighbour = n;
 	}
 
 
