@@ -3,21 +3,21 @@ package game.of.life;
 import java.awt.*;
 
 /**
- * Cell-klass, varje cell på canvasen är en instans av den här klassen
+ * Cell-klass, varje cell pï¿½ canvasen ï¿½r en instans av den hï¿½r klassen
  * 
  * @author Erik
  */
 public class Cell {
 	/**
-	 * Raden och kolumnen på cellen
+	 * Raden och kolumnen pï¿½ cellen
 	 */
 	public final int row, col;
 	/**
-	 * Storleken på cellen som en konstant
+	 * Storleken pï¿½ cellen som en konstant
 	 */
 	public static final int SIZE = 10;
 	/**
-	 * Antal grannar för cellen
+	 * Antal grannar fï¿½r cellen
 	 */
 	public int neighbour;
 	/**
@@ -27,8 +27,8 @@ public class Cell {
 
 
 	/**
-	 * @param r raden som cellen ska visas på
-	 * @param c kolumnen som cellen ska visas på
+	 * @param r raden som cellen ska visas pï¿½
+	 * @param c kolumnen som cellen ska visas pï¿½
 	 */
 	public Cell (int r, int c) {
 		this.row = r;
@@ -38,8 +38,8 @@ public class Cell {
 
 
 	/**
-	 * Sätter cellen till att vara levande 
-	 * @param a boolean, true för levande
+	 * Sï¿½tter cellen till att vara levande 
+	 * @param a boolean, true fï¿½r levande
 	 */
 	public void setAlive(boolean a) {
 		this.alive = a;
@@ -47,26 +47,26 @@ public class Cell {
 
 
 	/**
-	 * Hämtar cellens status, levande eller död
-	 * @return boolean true eller false vid levande eller död
+	 * Hï¿½mtar cellens status, levande eller dï¿½d
+	 * @return boolean true eller false vid levande eller dï¿½d
 	 */
 	public boolean getAlive() {
 		return this.alive;
 	}
 
 
-	/** Paint-metoden som ritar ut cellen på CellCanvasen
-	 *  @param g Graphics-objekt från CellCanvasen
+	/** Paint-metoden som ritar ut cellen pï¿½ CellCanvasen
+	 *  @param g Graphics-objekt frï¿½n CellCanvasen
 	 */
 	public void paint(Graphics g) {
-		// Kollar om cellen är levande eller inte för att rita ut olika färger
+		// Kollar om cellen ï¿½r levande eller inte fï¿½r att rita ut olika fï¿½rger
 		if (this.alive) {
-			// alive = true, färgen sätts till gul
+			// alive = true, fï¿½rgen sï¿½tts till gul
 			g.setColor(new Color(0xffee00));
 			g.fillRect(this.col*10, this.row*10, SIZE, SIZE);
 		}
 		else {
-			// alive = false, färden sätts till ljusgrå
+			// alive = false, fï¿½rden sï¿½tts till ljusgrï¿½
 			g.setColor(new Color(0xcccccc));
 			g.drawRect(this.col*10, this.row*10, SIZE, SIZE);
 		}
