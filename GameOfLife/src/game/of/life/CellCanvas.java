@@ -23,12 +23,12 @@ public class CellCanvas extends Canvas implements KeyListener, MouseListener, Mo
 	private int nRows = 26, nCols = 44, width, height, generations;
 
 	/**
-	 *  Cellerna som ett multidimensionell fält
+	 *  Cellerna som ett multidimensionell fï¿½lt
 	 */
 	private Cell cells[][] = new Cell[nRows][nCols];
 
 	/**
-	 *  För- och bakgrundsfärg
+	 *  Fï¿½r- och bakgrundsfï¿½rg
 	 */
 	private Color fcolor = new Color(0x999999);
 	private Color bcolor = new Color(0xcccccc);
@@ -39,12 +39,12 @@ public class CellCanvas extends Canvas implements KeyListener, MouseListener, Mo
 	private Vector<Cell> livingCells, nextLiving;
 
 	/**
-	 * Sparad cellstatus för den cellen man klickade på
+	 * Sparad cellstatus fï¿½r den cellen man klickade pï¿½
 	 */
 	private boolean savedCellState = false;
 	
 	/**
-	 * True om man ska köra programmet
+	 * True om man ska kï¿½ra programmet
 	 */
 	private boolean running = false;
 
@@ -59,16 +59,16 @@ public class CellCanvas extends Canvas implements KeyListener, MouseListener, Mo
 	Graphics gImage;
 
 	/**
-	 * Tråden som programmet körs i och sleeptime
+	 * Trï¿½den som programmet kï¿½rs i och sleeptime
 	 */
 	Thread t;
 	int sleep = 500;
 
 
 	/**
-	 * Konstruktor för CellCanvas
+	 * Konstruktor fï¿½r CellCanvas
 	 * @param w integer med bredden
-	 * @param h integer med höjden
+	 * @param h integer med hï¿½jden
 	 */
 	public CellCanvas(int w, int h) {
 		//this.width = w;
@@ -180,8 +180,8 @@ public class CellCanvas extends Canvas implements KeyListener, MouseListener, Mo
 
 	/**
 	 * Rita i en speciell cell
-	 * @param x x-kordinaten för cellen
-	 * @param y y-kordinaten för cellen
+	 * @param x x-kordinaten fï¿½r cellen
+	 * @param y y-kordinaten fï¿½r cellen
 	 */
 	public void draw(int x, int y) {
 		try {
@@ -202,10 +202,10 @@ public class CellCanvas extends Canvas implements KeyListener, MouseListener, Mo
 
 
 	/**
-	 * Hämtar cellen på det givna x- och y-värdet
-	 * @param x x-kordinat att hämta cell på
-	 * @param y y-kordinat att hämta cell på
-	 * @return true eller false vid levande eller död
+	 * Hï¿½mtar cellen pï¿½ det givna x- och y-vï¿½rdet
+	 * @param x x-kordinat att hï¿½mta cell pï¿½
+	 * @param y y-kordinat att hï¿½mta cell pï¿½
+	 * @return true eller false vid levande eller dï¿½d
 	 */
 	public boolean getCellState(int x, int y) {
 		try {
@@ -279,9 +279,9 @@ public class CellCanvas extends Canvas implements KeyListener, MouseListener, Mo
 
 
 	/**
-	 * Lägger till en granne på cellen för den givna kolumnen och raden
-	 * @param c kolumnen på cellen
-	 * @param r raden på cellen
+	 * Lï¿½gger till en granne pï¿½ cellen fï¿½r den givna kolumnen och raden
+	 * @param c kolumnen pï¿½ cellen
+	 * @param r raden pï¿½ cellen
 	 */
 	public void addNeighbour(int c, int r) {
 		try {
@@ -301,8 +301,8 @@ public class CellCanvas extends Canvas implements KeyListener, MouseListener, Mo
 
 
 	/**
-	 * GameOfLife-algoritmen för en levande cell
-	 * @param c Cellen man ska kolla för
+	 * GameOfLife-algoritmen fï¿½r en levande cell
+	 * @param c Cellen man ska kolla fï¿½r
 	 */
 	public void theNeighbours(Cell c) {
 		int col = c.col;
@@ -320,7 +320,7 @@ public class CellCanvas extends Canvas implements KeyListener, MouseListener, Mo
 
 
 	/**
-	 * Hämtar antalet generationer
+	 * Hï¿½mtar antalet generationer
 	 * @return integer med antalet generationer
 	 */
 	public int getGenerations() {
@@ -329,7 +329,7 @@ public class CellCanvas extends Canvas implements KeyListener, MouseListener, Mo
 
 
 	/**
-	 * Hämtar den nuvarande sleeptimen
+	 * Hï¿½mtar den nuvarande sleeptimen
 	 * @return integer med sleeptime
 	 */
 	public int getSleepTime() {
