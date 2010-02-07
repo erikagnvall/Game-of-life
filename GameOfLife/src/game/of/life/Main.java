@@ -10,28 +10,28 @@ public class Main extends Frame implements Runnable {
 	private static final long serialVersionUID = -7756878323926974220L;
 
 	/**
-	 * Bredd och höjd på fönstret
+	 * Bredd och hï¿½jd pï¿½ fï¿½nstret
 	 */
 	private int width = 447, height = 326;
 
 	/**
-	 * Frame, själva fönstret
+	 * Frame, sjï¿½lva fï¿½nstret
 	 */
 	private Frame frame;
 
 	/**
-	 * CellCanvasen som typ allt görs på
+	 * CellCanvasen som typ allt gï¿½rs pï¿½
 	 */
 	CellCanvas cc;
 
 	/**
-	 * StatusPanelen längst ner i fönstret
+	 * StatusPanelen lï¿½ngst ner i fï¿½nstret
 	 */
 	StatusPanel sp;
 
 	/**
-	 * Konstruktor, initierar fönstret och ser till så att 
-	 * vi kan stänga fönstret
+	 * Konstruktor, initierar fï¿½nstret och ser till sï¿½ att 
+	 * vi kan stï¿½nga fï¿½nstret
 	 */
 	public Main() {
 		createWindow();
@@ -48,7 +48,7 @@ public class Main extends Frame implements Runnable {
 	}
 
 	/**
-	 * Skapar fönstret och lägger till CellCanvasen till det
+	 * Skapar fï¿½nstret och lï¿½gger till CellCanvasen till det
 	 */
 	private void createWindow() {
 		frame = new Frame("Game of Life");
@@ -86,8 +86,8 @@ public class Main extends Frame implements Runnable {
 
 
 	/**
-	 * Ser till så att fönstret hamnar i mitten av skärmen
-	 * @return Point med x- och y-värdet i 
+	 * Ser till sï¿½ att fï¿½nstret hamnar i mitten av skï¿½rmen
+	 * @return Point med x- och y-vï¿½rdet i 
 	 */
 	private Point windowLocation() {
 		Point p = new Point();
@@ -102,7 +102,7 @@ public class Main extends Frame implements Runnable {
 
 	/**
 	 * Startar en instans av Main
-	 * @param args argument att skicka till programmet, för närvarande stöds inga argument
+	 * @param args argument att skicka till programmet, fï¿½r nï¿½rvarande stï¿½ds inga argument
 	 */
 	public static void main(String[] args) {
 		/** Create an instance of the class */
